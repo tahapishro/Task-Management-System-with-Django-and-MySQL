@@ -1,0 +1,17 @@
+<html lang="en">
+{% extends "tasks/base.html" %}
+
+{% block title %}{{ task.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ task.title }}</h1>
+    <div lang="en" class="task-details">
+        <p><strong>Title:</strong> {{ task.title }}</p>
+        <p style="text-align: justify;"><strong>Description:</strong> {{ task.description|linebreaks }}</p>
+        <p><strong>Status:</strong> <span class="status {% if task.is_completed %}completed{% else %}not_complete{% endif %}">{{ task.is_completed|yesno:"Completed,Pending" }}</span></p>
+        <p><strong>Created at:</strong> {{ task.created_at }}</p>
+        <p><strong>Updated at:</strong> {{ task.updated_at }}</p>
+    </div>
+    
+    <a href="{% url 'tasks:task_list' %}" class="back-btn">Back to Task List</a>
+{% endblock %}

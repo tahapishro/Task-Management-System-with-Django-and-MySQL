@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Task Management{% endblock %}</title>
+    <link href="{% static 'tasks/css/tasks.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div id="sidebar">
+        <h2>TaskTrackMaster</h2>
+        <h3>A Task Flow and Management System</h3>
+        <br>
+    <p style="text-align: justify;">TaskTrackMaster is designed to empower individuals and teams to streamline their workflows, prioritize tasks, and achieve their goals with ease. 
+
+Whether you’re managing personal projects, collaborating with colleagues, or overseeing complex assignments, our intuitive interface and robust features will help you stay on track and increase efficiency. With powerful tools for task assignment, progress tracking, and deadline management, you’ll have everything you need to turn ideas into action.
+
+Experience the benefits of enhanced collaboration, clear accountability, and improved time management.</p> 
+    <p style="text-align: justify;">Say goodbye to scattered to-do lists and overwhelming workloads; welcome to a more organized and productive way of working. Let’s embark on this journey towards achieving excellence together!
+
+Thank you for choosing TaskTrackMaster, where every task counts!</p>
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

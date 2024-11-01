@@ -1,0 +1,13 @@
+<html lang="en">
+{% extends "tasks/base.html" %}
+
+{% block title %}Task Management{% endblock %}
+
+{% block content %}
+    <h1>Task Management System with Django and MySQL</h1>
+    <br>
+    <ul>
+        <li><a href="{% url 'tasks:task_list' %}">Tasks List</a></li>
+        <li><a href="{% url 'tasks:task_completed' %}">Completed Tasks List</a></li>
+    </ul>
+{% endblock %}
